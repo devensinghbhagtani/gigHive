@@ -1,36 +1,34 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:gighive/Components/appbar.dart';
 import 'package:gighive/Components/coursetile.dart';
 import 'package:gighive/Components/freelancerstile.dart';
+import 'package:gighive/Components/pageheader.dart';
 import 'package:gighive/Components/reviewtile.dart';
 import 'package:gighive/Config/colors.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
   @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomAppBar(),
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.only(left: 25, right: 25, top: 10),
+          padding: EdgeInsets.only(left: 25, right: 25, top: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(14),
-                    decoration: BoxDecoration(
-                        color: notiColor,
-                        borderRadius: BorderRadius.circular(100)),
-                    child: SvgPicture.asset(
-                      "assets/icons/notification.svg",
-                      width: 17,
-                    ),
-                  )
-                ],
+              // PageHeader(),
+              const SizedBox(
+                height: 20,
               ),
               const Text(
                 "Recommended Courses",
@@ -40,7 +38,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 6,
+                height: 8,
               ),
               const SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
@@ -63,7 +61,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 15,
+                height: 20,
               ),
               const Text(
                 "Top Freelancers of the Week",
@@ -73,7 +71,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 6,
+                height: 8,
               ),
               const SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
@@ -92,7 +90,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 6,
+                height: 15,
               ),
               const Text(
                 "Reviews",

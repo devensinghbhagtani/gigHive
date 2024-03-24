@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gighive/Config/theme.dart';
+import 'package:gighive/Pages/freelancers.dart';
 import 'package:gighive/Pages/homepage.dart';
+import 'package:gighive/navigation.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -9,7 +11,7 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +19,8 @@ class MyApp extends StatelessWidget {
       showSemanticsDebugger: false,
       title: 'Muzic Player',
       theme: lightTheme,
-      home: const HomePage(),
-      // home: const DemoPage(),
+      home: NavigationMenu(),
+      // home: const FreelancersPage(),
     );
   }
 }
