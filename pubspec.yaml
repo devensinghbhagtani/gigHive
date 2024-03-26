@@ -38,6 +38,9 @@ dependencies:
   get: ^4.6.6
   flutter_svg: ^2.0.10+1
   curved_navigation_bar: ^1.0.3 #latest version
+  sticky_headers: ^0.3.0+2
+  auto_size_text: ^3.0.0
+  carousel_slider: ^4.2.1
 
 
 dev_dependencies:

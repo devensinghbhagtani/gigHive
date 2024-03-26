@@ -1,52 +1,136 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:gighive/Config/colors.dart';
+import 'package:gighive/Controller/appbarcontroller.dart';
+import 'package:gighive/Pages/freelancers.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({super.key});
+  const CustomAppBar(
+      {super.key,
+      required this.appBarText,
+      required this.isBackAvl,
+      required this.isChatAvl,
+      required this.isNotiAvl,
+      this.wantDots,
+      this.isFreelance});
+  final bool isBackAvl;
+  final String appBarText;
+  final bool isChatAvl;
+  final bool isNotiAvl;
+  final bool? wantDots;
+  final bool? isFreelance;
 
   @override
   Widget build(BuildContext context) {
+    AppBarController appBarController = Get.put(AppBarController());
     return SafeArea(
-      child: Padding(
-        padding: EdgeInsets.only(left: 25, right: 25, top: 20),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            IconButton(
-              iconSize: 30,
-              color: Color.fromARGB(255, 230, 230, 230),
-              onPressed: () {},
-              icon: SvgPicture.asset(
-                "assets/icons/Back.svg",
+      child: Container(
+        decoration: BoxDecoration(
+          color: isFreelance == true ? Colors.white : Colors.transparent,
+        ),
+        child: Padding(
+          padding: EdgeInsets.only(
+            left: 25,
+            right: 25,
+            top: 20,
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              isBackAvl == true
+                  ? InkWell(
+                      borderRadius: BorderRadius.circular(30),
+                      onTap: () {
+                        appBarController.isNotiSelected.value = true;
+                        Get.back();
+                      },
+                      child: Container(
+                        padding: EdgeInsets.all(13),
+                        width: 44,
+                        height: 44,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(100),
+                        ),
+                        child: SvgPicture.asset(
+                          "assets/icons/Back.svg",
+                          color: Colors.black54,
+                        ),
+                      ),
+                    )
+                  : isChatAvl == true
+                      ? InkWell(
+                          borderRadius: BorderRadius.circular(30),
+                          onTap: () {
+                            appBarController.isNotiSelected.value = true;
+                            Get.back();
+                          },
+                          child: Container(
+                            padding: EdgeInsets.all(11),
+                            width: 44,
+                            height: 44,
+                            decoration: BoxDecoration(
+                              color: notiColor,
+                              borderRadius: BorderRadius.circular(100),
+                            ),
+                            child: SvgPicture.asset(
+                              "assets/icons/Chat.svg",
+                            ),
+                          ),
+                        )
+                      : SizedBox(
+                          width: 44,
+                          height: 44,
+                        ),
+              Text(
+                "$appBarText",
+                style: TextStyle(fontSize: 18),
               ),
-            ),
-            Container(
-              padding: EdgeInsets.all(13),
-              width: 44,
-              height: 44,
-              decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 230, 230, 230),
-                  borderRadius: BorderRadius.circular(100)),
-              child: SvgPicture.asset(
-                "assets/icons/Back.svg",
-              ),
-            ),
-            Text(
-              "Freelancers",
-              style: TextStyle(fontSize: 18),
-            ),
-            Container(
-              padding: EdgeInsets.all(12),
-              width: 44,
-              height: 44,
-              decoration: BoxDecoration(
-                  color: notiColor, borderRadius: BorderRadius.circular(100)),
-              child: SvgPicture.asset(
-                "assets/icons/notification.svg",
-              ),
-            ),
-          ],
+              isNotiAvl == true
+                  ? InkWell(
+                      splashColor: notiColor,
+                      borderRadius: BorderRadius.circular(30),
+                      onTap: () {
+                        Get.back();
+                      },
+                      child: Container(
+                        padding: EdgeInsets.all(12),
+                        width: 44,
+                        height: 44,
+                        decoration: BoxDecoration(
+                            color: notiColor,
+                            borderRadius: BorderRadius.circular(100)),
+                        child: SvgPicture.asset(
+                          "assets/icons/notification.svg",
+                        ),
+                      ),
+                    )
+                  : wantDots == true
+                      ? InkWell(
+                          borderRadius: BorderRadius.circular(30),
+                          onTap: () {
+                            appBarController.isNotiSelected.value = true;
+                            Get.back();
+                          },
+                          child: Container(
+                            padding: EdgeInsets.all(13),
+                            width: 44,
+                            height: 44,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(100),
+                            ),
+                            child: SvgPicture.asset(
+                              "assets/icons/dots.svg",
+                              color: Colors.black54,
+                            ),
+                          ),
+                        )
+                      : SizedBox(
+                          width: 44,
+                          height: 44,
+                        ),
+            ],
+          ),
         ),
       ),
     );
