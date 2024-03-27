@@ -13,13 +13,15 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       required this.isChatAvl,
       required this.isNotiAvl,
       this.wantDots,
-      this.isFreelance});
+      this.isFreelance,
+      this.wantLogo});
   final bool isBackAvl;
   final String appBarText;
   final bool isChatAvl;
   final bool isNotiAvl;
   final bool? wantDots;
   final bool? isFreelance;
+  final bool? wantLogo;
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +40,29 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              Row(
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                        color: primColor,
+                        borderRadius: BorderRadius.circular(30)),
+                    child: SvgPicture.asset(
+                      "assets/icons/gigHiveSymbol.svg",
+                      width: 20,
+                      color: fontColor,
+                    ),
+                  ),
+                  Text(
+                    " gigHive ",
+                    style: TextStyle(
+                      fontFamily: "Hibernate",
+                      fontSize: 30,
+                    ),
+                  ),
+                  Icon(Icons.keyboard_arrow_down_rounded),
+                ],
+              ),
               isBackAvl == true
                   ? InkWell(
                       borderRadius: BorderRadius.circular(30),

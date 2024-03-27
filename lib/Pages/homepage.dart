@@ -21,9 +21,10 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: CustomAppBar(
         isNotiAvl: true,
-        appBarText: "Home",
+        appBarText: "",
         isBackAvl: false,
-        isChatAvl: true,
+        isChatAvl: false,
+        wantLogo: true,
       ),
       body: SafeArea(
         child: Padding(
@@ -45,31 +46,25 @@ class _HomePageState extends State<HomePage> {
                   style: TextStyle(
                     fontFamily: "Poppins",
                     fontSize: 16,
+                    fontStyle: FontStyle.italic,
                   ),
                 ),
                 const SizedBox(
                   height: 5,
                 ),
-                const SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      CourseTile(),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      CourseTile(),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      CourseTile(),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      CourseTile(),
-                    ],
+                Container(
+                  width: double.infinity,
+                  height: 190,
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: 4,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (BuildContext context, int index) {
+                      return CourseTile();
+                    },
                   ),
                 ),
+
                 const SizedBox(
                   height: 20,
                 ),
@@ -78,25 +73,29 @@ class _HomePageState extends State<HomePage> {
                   style: TextStyle(
                     fontFamily: "Poppins",
                     fontSize: 16,
+                    fontStyle: FontStyle.italic,
                   ),
                 ),
                 const SizedBox(
                   height: 8,
                 ),
-                const SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      FreelancersTile(),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      FreelancersTile(),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      FreelancersTile(),
-                    ],
+                Container(
+                  width: double.infinity,
+                  height: 249,
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: 4,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Row(
+                        children: [
+                          FreelancersTile(),
+                          SizedBox(
+                            width: 16,
+                          )
+                        ],
+                      );
+                    },
                   ),
                 ),
 
@@ -105,6 +104,7 @@ class _HomePageState extends State<HomePage> {
                   style: TextStyle(
                     fontFamily: "Poppins",
                     fontSize: 16,
+                    fontStyle: FontStyle.italic,
                   ),
                 ),
                 const SizedBox(

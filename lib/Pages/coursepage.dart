@@ -178,7 +178,7 @@ class CoursePage extends StatelessWidget {
                             crossAxisCount: 2,
                             mainAxisSpacing: 10,
                             crossAxisSpacing: 15,
-                            childAspectRatio: 170 / 211,
+                            childAspectRatio: 170 / 209,
                             children: List.generate(
                               9,
                               (index) => EducatorTile(),

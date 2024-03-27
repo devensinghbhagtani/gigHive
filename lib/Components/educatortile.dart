@@ -65,15 +65,16 @@ class EducatorTile extends StatelessWidget {
                                 height: 9,
                               ),
                               Container(
-                                padding: EdgeInsets.fromLTRB(25, 4, 25, 4),
+                                width: double.infinity,
+                                padding: EdgeInsets.fromLTRB(0, 4, 0, 4),
                                 decoration: BoxDecoration(
                                     color: notiColor,
-                                    border: Border.all(width: 1),
-                                    borderRadius: BorderRadius.circular(8)),
+                                    border: Border.all(width: 0.5),
+                                    borderRadius: BorderRadius.circular(5)),
                                 child: Text(
                                   "Go to the courses",
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(fontSize: 10),
+                                  style: TextStyle(fontSize: 11),
                                 ),
                               )
                             ],
