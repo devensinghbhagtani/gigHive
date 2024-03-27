@@ -40,50 +40,31 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                        color: primColor,
-                        borderRadius: BorderRadius.circular(30)),
-                    child: SvgPicture.asset(
-                      "assets/icons/gigHiveSymbol.svg",
-                      width: 20,
-                      color: fontColor,
-                    ),
-                  ),
-                  Text(
-                    " gigHive ",
-                    style: TextStyle(
-                      fontFamily: "Hibernate",
-                      fontSize: 30,
-                    ),
-                  ),
-                  Icon(Icons.keyboard_arrow_down_rounded),
-                ],
-              ),
-              isBackAvl == true
-                  ? InkWell(
-                      borderRadius: BorderRadius.circular(30),
-                      onTap: () {
-                        appBarController.isNotiSelected.value = true;
-                        Get.back();
-                      },
-                      child: Container(
-                        padding: EdgeInsets.all(13),
-                        width: 44,
-                        height: 44,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(100),
+              wantLogo == true
+                  ? Row(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.all(8),
+                          decoration: BoxDecoration(
+                              color: primColor,
+                              borderRadius: BorderRadius.circular(30)),
+                          child: SvgPicture.asset(
+                            "assets/icons/gigHiveSymbol.svg",
+                            width: 20,
+                            color: fontColor,
+                          ),
                         ),
-                        child: SvgPicture.asset(
-                          "assets/icons/Back.svg",
-                          color: Colors.black54,
+                        Text(
+                          " gigHive ",
+                          style: TextStyle(
+                            fontFamily: "Hibernate",
+                            fontSize: 30,
+                          ),
                         ),
-                      ),
+                        Icon(Icons.keyboard_arrow_down_rounded),
+                      ],
                     )
-                  : isChatAvl == true
+                  : isBackAvl == true
                       ? InkWell(
                           borderRadius: BorderRadius.circular(30),
                           onTap: () {
@@ -91,22 +72,42 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                             Get.back();
                           },
                           child: Container(
-                            padding: EdgeInsets.all(11),
+                            padding: EdgeInsets.all(13),
                             width: 44,
                             height: 44,
                             decoration: BoxDecoration(
-                              color: notiColor,
                               borderRadius: BorderRadius.circular(100),
                             ),
                             child: SvgPicture.asset(
-                              "assets/icons/Chat.svg",
+                              "assets/icons/Back.svg",
+                              color: Colors.black54,
                             ),
                           ),
                         )
-                      : SizedBox(
-                          width: 44,
-                          height: 44,
-                        ),
+                      : isChatAvl == true
+                          ? InkWell(
+                              borderRadius: BorderRadius.circular(30),
+                              onTap: () {
+                                appBarController.isNotiSelected.value = true;
+                                Get.back();
+                              },
+                              child: Container(
+                                padding: EdgeInsets.all(11),
+                                width: 44,
+                                height: 44,
+                                decoration: BoxDecoration(
+                                  color: notiColor,
+                                  borderRadius: BorderRadius.circular(100),
+                                ),
+                                child: SvgPicture.asset(
+                                  "assets/icons/Chat.svg",
+                                ),
+                              ),
+                            )
+                          : SizedBox(
+                              width: 44,
+                              height: 44,
+                            ),
               Text(
                 "$appBarText",
                 style: TextStyle(fontSize: 18),
