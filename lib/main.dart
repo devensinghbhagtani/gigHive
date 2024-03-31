@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:gighive/Config/theme.dart';
 import 'package:gighive/Pages/freelancers.dart';
 import 'package:gighive/Pages/homepage.dart';
+import 'package:gighive/Pages/intropages.dart';
 import 'package:gighive/navigation.dart';
 
 void main() async {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       showSemanticsDebugger: false,
       title: 'Muzic Player',
       theme: lightTheme,
-      home: NavigationMenu(),
+      home: IntroPages(),
       // home: const FreelancersPage(),
     );
   }
