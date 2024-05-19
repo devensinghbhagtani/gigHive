@@ -1,6 +1,7 @@
 # GigHive
 
 Welcome to **GigHive**, a revolutionary mobile application designed to transform the way clients, learners, educators, and freelancers interact. GigHive is a versatile platform that seamlessly connects these stakeholders in the dynamic ecosystem of remote work, freelance opportunities, and online education.
+- Explore the GigHive design prototype on [Figma](https://www.figma.com/design/P7t2qKc7Ftkc49oxWzKRi5/gigHive?node-id=0%3A1&t=XsxOGt8agSuSFUi1-1).
 
 ## Introduction
 
