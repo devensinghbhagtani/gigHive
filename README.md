@@ -52,8 +52,16 @@ Our mission is to simplify hiring, learning, and teaching, empowering users to a
 ## Screens and Features
 - **Login and Registration Screens**
 - **Navigation Screens**: Home Page, Freelancer's Page, Course Page, Educators Page, User Profile/Settings, Freelancer's Profile
+![first](https://github.com/devensinghbhagtani/gigHive/assets/67409912/e7ba65b2-0550-4f64-9e6d-21f097bf6bb3)
+![second](https://github.com/devensinghbhagtani/gigHive/assets/67409912/73e0558f-0be0-4738-b484-19e31580b0ed)
+![third](https://github.com/devensinghbhagtani/gigHive/assets/67409912/6554fb63-f131-480c-bdcf-5ad23d6527a3)
+
 - **Chatbot Feature**
+![fourth](https://github.com/devensinghbhagtani/gigHive/assets/67409912/bdbc293f-3ad6-400d-8f55-3f18030f2e06)
+
 - **Sidebar and Feedback Form**
+![fifth](https://github.com/devensinghbhagtani/gigHive/assets/67409912/321c35e1-df07-4752-a03a-09c53a0a61bc)
+
 
 ## Installation
 
